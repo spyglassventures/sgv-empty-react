@@ -1,25 +1,45 @@
 import React from 'react';
+import { useState } from 'react';
+import { QrReader } from 'react-qr-reader';
 
-const App = () => {
+const App = (props) => {
+  const [data, setData] = useState('No result');
+
   return (
     <div className="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen">
       {/* Hero Section */}
+      
       <section className="py-20 text-center text-white">
-        <h1 className="text-5xl font-bold mb-4">Welcome to CryptoWorld</h1>
-        <p className="text-lg mb-8">Invest in the future of finance</p>
+        <h1 className="text-5xl font-bold mb-4">Please scan your medical ZK-Proof</h1>
+        <p className="text-lg mb-8">You will only do minimal required disclosure of infrmation</p>
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
           Get Started
         </button>
+
+            <QrReader
+            onResult={(result, error) => {
+              if (!!result) {
+                setData(result?.text);
+              }
+
+              if (!!error) {
+                console.info(error);
+              }
+            }}
+            style={{ width: '100%' }}
+          />
+          <p>{data}</p>
+        
       </section>
 
       {/* About Section */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-8">
           <h2 className="text-3xl font-semibold text-gray-800 mb-4">
-            What is CryptoWorld?
+            What is ZK Medical docs?
           </h2>
           <p className="text-gray-600 mb-8">
-            CryptoWorld is a revolutionary blockchain-based platform that allows you to securely store and trade cryptocurrencies. Our mission is to make digital assets accessible to everyone, providing a simple and user-friendly experience.
+          ZK Medical docs is a revolutionary blockchain-based platform that allows you to securely reveal medical information to selected trusted institutions you like to work with. Our mission is to make digital medical records accessible to everyone who should have access, but to no one else.
           </p>
           <p className="text-gray-600">
             Whether you are a seasoned trader or just starting with cryptocurrencies, CryptoWorld has got you covered. Join us and be a part of the future of finance!
