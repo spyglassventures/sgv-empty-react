@@ -1,69 +1,111 @@
 import React from 'react';
-import './App.css';
 
 const App = () => {
-  const hackathonTitle = "Crypto Hackathon 2023";
-  const hackathonDate = "August 15-16, 2023";
-  const hackathonLocation = "Virtual Event";
-  const hackathonDescription = "Join us for the biggest crypto hackathon of the year! Dive into the world of blockchain, cryptocurrencies, and decentralized applications. Whether you're a seasoned developer or just starting, this hackathon is the perfect opportunity to showcase your skills and create innovative projects with the potential to shape the future of finance and technology.";
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{hackathonTitle}</h1>
-        <p>Date: {hackathonDate}</p>
-        <p>Location: {hackathonLocation}</p>
-      </header>
-      <main className="App-content">
-        <h2>About the Hackathon</h2>
-        <p>{hackathonDescription}</p>
+    <div className="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen">
+      {/* Hero Section */}
+      <section className="py-20 text-center text-white">
+        <h1 className="text-5xl font-bold mb-4">Welcome to CryptoWorld</h1>
+        <p className="text-lg mb-8">Invest in the future of finance</p>
+        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+          Get Started
+        </button>
+      </section>
 
-        <h2>Prizes</h2>
-        <ul>
-          <li>1st Place: $10,000 in cryptocurrency</li>
-          <li>2nd Place: $5,000 in cryptocurrency</li>
-          <li>3rd Place: $2,500 in cryptocurrency</li>
-        </ul>
+      {/* About Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-4">
+            What is CryptoWorld?
+          </h2>
+          <p className="text-gray-600 mb-8">
+            CryptoWorld is a revolutionary blockchain-based platform that allows you to securely store and trade cryptocurrencies. Our mission is to make digital assets accessible to everyone, providing a simple and user-friendly experience.
+          </p>
+          <p className="text-gray-600">
+            Whether you are a seasoned trader or just starting with cryptocurrencies, CryptoWorld has got you covered. Join us and be a part of the future of finance!
+          </p>
+        </div>
+      </section>
 
-        <h2>Event Schedule</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Day</th>
-              <th>Time</th>
-              <th>Activity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Day 1</td>
-              <td>10:00 AM - 11:00 AM</td>
-              <td>Opening Ceremony</td>
-            </tr>
-            <tr>
-              <td>Day 1</td>
-              <td>11:30 AM - 6:00 PM</td>
-              <td>Hacking Session</td>
-            </tr>
-            <tr>
-              <td>Day 2</td>
-              <td>10:00 AM - 5:00 PM</td>
-              <td>Hacking Session</td>
-            </tr>
-            <tr>
-              <td>Day 2</td>
-              <td>6:00 PM - 7:00 PM</td>
-              <td>Closing Ceremony &amp; Demos</td>
-            </tr>
-          </tbody>
-        </table>
+      {/* Features Section */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-8">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 mb-12">
+            Our Key Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Secure Wallet</h3>
+              <p className="text-gray-600">
+                Our secure wallet ensures the safety of your digital assets with state-of-the-art encryption and multi-factor authentication.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Instant Trading</h3>
+              <p className="text-gray-600">
+                Experience lightning-fast trades with our advanced trading engine, providing real-time market data and seamless execution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <h2>Registration</h2>
-        <p>Don't miss out on this incredible event! Register now at <a href="https://cryptohackathon2023.example">cryptohackathon2023.example</a>.</p>
-      </main>
-      <footer className="App-footer">
-        <p>© 2023 Crypto Hackathon. All rights reserved.</p>
-      </footer>
+      {/* Team Section */}
+      <section className="bg-blue-500 py-16 text-white">
+        <div className="max-w-6xl mx-auto px-8">
+          <h2 className="text-3xl font-semibold text-center mb-12">
+            Meet Our Team
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Team Member Cards */}
+            {/* You can replace these placeholders with actual team member information */}
+            <div className="bg-blue-600 rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold mb-2">John Doe</h3>
+              <p className="text-sm text-blue-200">CEO</p>
+            </div>
+            <div className="bg-blue-600 rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold mb-2">Jane Smith</h3>
+              <p className="text-sm text-blue-200">CTO</p>
+            </div>
+            <div className="bg-blue-600 rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold mb-2">Mike Johnson</h3>
+              <p className="text-sm text-blue-200">Lead Developer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
+            Contact Us
+          </h2>
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <input
+              type="text"
+              className="px-4 py-2 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Your Name"
+            />
+            <input
+              type="email"
+              className="px-4 py-2 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Your Email"
+            />
+            <textarea
+              className="px-4 py-2 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 col-span-full"
+              placeholder="Your Message"
+              rows="4"
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded col-span-full"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
   );
 };
