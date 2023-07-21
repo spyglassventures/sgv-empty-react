@@ -9,6 +9,31 @@ const App = (props) => {
     facingMode: 'environment', // Use the back camera (rear camera)
   };
 
+  const handleScan = (result) => {
+    if (result) {
+      setData(result);
+    }
+  };
+
+  const handleError = (error) => {
+    console.error(error);
+  };
+
+  const openScannedURL = () => {
+    // Check if the scanned data is a valid URL before opening it
+    if (data && isURL(data)) {
+      window.open(data, '_blank'); // Open the URL in a new tab
+    } else {
+      console.log('Invalid URL or no URL scanned.');
+    }
+  };
+
+  const isURL = (text) => {
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    return urlPattern.test(text);
+  };
+
+
   return (
     <div className="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen">
       {/* Hero Section */}
@@ -31,9 +56,14 @@ const App = (props) => {
               }
             }}
             style={{ width: '100%' }}
+            onScan={handleScan}
+            onError={handleError}
             facingMode={qrConstraints.facingMode}
           />
           <p>{data}</p>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" onClick={openScannedURL}>
+            Proof
+          </button>
         
       </section>
 
