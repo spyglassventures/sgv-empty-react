@@ -58,7 +58,9 @@ const App = (props) => {
             style={{ width: '100%' }}
             onScan={handleScan}
             onError={handleError}
-            facingMode={qrConstraints.facingMode}
+            constraints={{ facingMode: 'environment' }}
+
+
           />
           <p>{data}</p>
           <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" onClick={openScannedURL}>
