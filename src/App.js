@@ -5,6 +5,10 @@ import { QrReader } from 'react-qr-reader';
 const App = (props) => {
   const [data, setData] = useState('No result');
 
+  const qrConstraints = {
+    facingMode: 'environment', // Use the back camera (rear camera)
+  };
+
   return (
     <div className="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen">
       {/* Hero Section */}
@@ -27,6 +31,7 @@ const App = (props) => {
               }
             }}
             style={{ width: '100%' }}
+            facingMode={qrConstraints.facingMode}
           />
           <p>{data}</p>
         
